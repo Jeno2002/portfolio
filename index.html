@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en" style="background-color: #f0f0f0 !important">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>Infant Jeno J | Java Full Stack Developer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      emailjs.init("LS_981-e-jEQRTlPH");
+    </script>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        html,
+        body,
+        nav,
+        section,
+        div,
+        footer,
+        input,
+        textarea,
+        button {
+          background-color: inherit !important;
+          color: inherit !important;
+        }
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        background-color: #f0f0f0 !important;
+        color: #111111 !important;
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* NAV */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #f0f0f0 !important;
+        border-bottom: 1px solid #e2e2e2;
+        padding: 0 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-name {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #111 !important;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #555 !important;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: #111 !important;
+      }
+      .btn-resume {
+        background-color: #111111 !important;
+        color: #ffffff !important;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 700 !important;
+        font-size: 0.875rem !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        border: none !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+        letter-spacing: 0.01em;
+        transition: background 0.2s !important;
+      }
+      .btn-resume:hover {
+        background-color: #222222 !important;
+      }
+
+      /* HERO */
+      #hero {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 80px 60px 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+      .hero-text {
+        flex: 1;
+      }
+      .hero-text h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        line-height: 1.15;
+        color: #111 !important;
+      }
+      .hero-text p {
+        font-size: 1.05rem;
+        color: #444 !important;
+        max-width: 640px;
+        margin-bottom: 30px;
+        line-height: 1.7;
+      }
+      .hero-text p strong {
+        color: #111 !important;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .hero-btn {
+        border: 1.5px solid #4f6ef7;
+        color: #4f6ef7 !important;
+        padding: 9px 20px;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        transition: all 0.2s;
+        background-color: transparent !important;
+      }
+      .hero-btn:hover {
+        background-color: #4f6ef7 !important;
+        color: #fff !important;
+      }
+      .hero-photo {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        background-color: #ddd !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        color: #999 !important;
+        border: 4px solid #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* SECTIONS */
+      section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 60px;
+        background-color: #f0f0f0 !important;
+      }
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 12px;
+        color: #111 !important;
+      }
+      .section-subtitle {
+        text-align: center;
+        color: #444 !important;
+        font-size: 1rem;
+        margin-bottom: 40px;
+        line-height: 1.7;
+      }
+
+      /* SKILLS */
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .skill-chip {
+        background-color: #ffffff !important;
+        border: 1px solid #e2e2e2;
+        border-radius: 10px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #111 !important;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+      .skill-chip:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* PROJECTS */
+      .project-card {
+        display: flex;
+        gap: 28px;
+        margin-bottom: 48px;
+        align-items: flex-start;
+      }
+      .project-img {
+        width: 200px;
+        min-width: 200px;
+        height: 140px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #e8f0fe, #c3d7ff) !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+      }
+      .project-info h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #111 !important;
+      }
+      .project-info h3 a {
+        color: #4f6ef7 !important;
+        margin-left: 6px;
+        font-size: 0.95rem;
+      }
+      .project-info h3 a:hover {
+        text-decoration: underline;
+      }
+      .project-type {
+        font-style: italic;
+        color: #666 !important;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      .project-info p {
+        font-size: 0.95rem;
+        color: #444 !important;
+        margin-bottom: 10px;
+        line-height: 1.7;
+      }
+      .project-info p strong {
+        color: #111 !important;
+      }
+      .project-tags {
+        font-size: 0.85rem;
+        color: #555 !important;
+      }
+      .project-tags strong {
+        color: #111 !important;
+      }
+
+      /* EXPERIENCE */
+      .exp-card {
+        background-color: #ffffff !important;
+        border: 1px solid #e2e2e2;
+        border-radius: 14px;
+        padding: 24px 28px;
+        margin-bottom: 20px;
+      }
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+      .exp-title {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #111 !important;
+      }
+      .exp-company {
+        color: #4f6ef7 !important;
+        font-weight: 600;
+      }
+      .exp-date {
+        color: #555 !important;
+        font-size: 0.85rem;
+      }
+      .exp-card ul {
+        padding-left: 18px;
+        color: #444 !important;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+      .exp-card ul li {
+        margin-bottom: 4px;
+      }
+
+      /* CONTACT */
+      #contact .contact-wrap {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+      }
+      .contact-left {
+        flex: 1;
+      }
+      .contact-left p {
+        color: #555 !important;
+        margin-bottom: 24px;
+        font-size: 0.95rem;
+      }
+      .contact-detail {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        color: #111 !important;
+      }
+      .contact-detail a {
+        color: #4f6ef7 !important;
+      }
+      .contact-detail a:hover {
+        text-decoration: underline;
+      }
+      .contact-right {
+        flex: 1.2;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        color: #111 !important;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1.5px solid #e2e2e2;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        background-color: #f0f0f0 !important;
+        color: #111 !important;
+        transition: border-color 0.2s;
+        outline: none;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #4f6ef7;
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 140px;
+      }
+      .btn-send {
+        width: 100%;
+        padding: 13px;
+        background-color: #4f6ef7 !important;
+        color: #fff !important;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn-send:hover {
+        background-color: #3a58e0 !important;
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 28px;
+        font-size: 0.85rem;
+        color: #555 !important;
+        border-top: 1px solid #e2e2e2;
+        background-color: #f0f0f0 !important;
+      }
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          height: auto;
+          padding: 10px;
+          gap: 10px;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+
+        .hero-text p {
+          font-size: 0.95rem;
+        }
+
+        #hero {
+          flex-direction: column-reverse;
+          text-align: center;
+          padding: 40px 20px;
+        }
+
+        .hero-photo {
+          width: 150px;
+          height: 150px;
+        }
+
+        section {
+          padding: 40px 15px;
+        }
+
+        .project-card {
+          flex-direction: column;
+        }
+
+        .project-img {
+          width: 100%;
+        }
+
+        #contact .contact-wrap {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #f0f0f0 !important; color: #111111 !important">
+    <!-- NAV -->
+    <nav style="background-color: #f0f0f0 !important">
+      <div class="nav-name">Infant Jeno J</div>
+      <div class="nav-links">
+        <a href="https://github.com/Jeno2002" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+            />
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/infant-jeno" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+            />
+          </svg>
+          LinkedIn
+        </a>
+        <a href="mailto:infantjenoj@gmail.com">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          Email
+        </a>
+        <a href="Resume.pdf" download="Resume.pdf" class="btn-resume">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span style="color: #ffffff !important">Resume</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div id="hero" style="background-color: #f0f0f0 !important">
+      <div class="hero-text">
+        <h1>Hey, I'm Infant Jeno 👋</h1>
+        <p>
+          I'm a <strong>Java Full Stack Developer</strong> skilled in
+          <strong>Java, Spring Boot, MySQL, REST APIs</strong>, and
+          <strong>React</strong>. Experienced in building full-stack web
+          applications with clean backend architecture and responsive frontends.
+          Familiar with <strong>Python, Django, Git, GitHub, VS Code</strong>,
+          and <strong>Eclipse</strong>. Focused on writing efficient,
+          maintainable code and delivering reliable software solutions.
+        </p>
+        <div class="hero-buttons">
+          <a href="#skills" class="hero-btn">⌨️ Skills</a>
+          <a href="#projects" class="hero-btn">🖥️ Projects</a>
+          <a href="#contact" class="hero-btn">✉️ Contact</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="profile2.jpg.jpeg" alt="Infant Jeno" />
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <section id="skills" style="background-color: #f0f0f0 !important">
+      <h2 class="section-title">Technical Skills</h2>
+      <p class="section-subtitle">
+        I build full-stack applications — from structured Java backends to
+        responsive web frontends. Here are the tools and technologies I work
+        with:
+      </p>
+      <div class="skills-grid">
+        <div class="skill-chip">☕ Java</div>
+        <div class="skill-chip">🌱 Spring Boot</div>
+        <div class="skill-chip">🐍 Python</div>
+        <div class="skill-chip">🌐 HTML5</div>
+        <div class="skill-chip">🎨 CSS3</div>
+        <div class="skill-chip">⚡ JavaScript</div>
+        <div class="skill-chip">⚛️ React</div>
+        <div class="skill-chip">🔗 REST APIs</div>
+        <div class="skill-chip">🗄️ MySQL</div>
+        <div class="skill-chip">📊 SQL</div>
+        <div class="skill-chip">🔌 JDBC</div>
+        <div class="skill-chip">🐍 Django</div>
+        <div class="skill-chip">🐙 Git &amp; GitHub</div>
+        <div class="skill-chip">💻 VS Code</div>
+        <div class="skill-chip">🌑 Eclipse</div>
+        <div class="skill-chip">🧪 Manual Testing</div>
+        <div class="skill-chip">📋 Microsoft Excel</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" style="background-color: #f0f0f0 !important">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-card">
+        <div class="project-img">🏥</div>
+        <div class="project-info">
+          <h3>
+            Smart Health Monitoring System
+            <a
+              href="https://github.com/Jeno2002/smart-health-monitoring-system"
+              target="_blank"
+              >| GitHub</a
+            >
+          </h3>
+          <p class="project-type">Full-Stack Health Web Application</p>
+          <p>
+            Built a web-based health monitoring application using
+            <strong>Python and Django</strong>. Tracked patient information and
+            health records. Integrated
+            <strong>emergency alert functionality</strong> for critical health
+            thresholds. Developed the frontend using
+            <strong>HTML, CSS, and JavaScript</strong>.
+          </p>
+          <p class="project-tags">
+            <strong>Key Skills:</strong> Python, Django, HTML, CSS, JavaScript,
+            MySQL
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">👥</div>
+        <div class="project-info">
+          <h3>
+            Employee Management System
+            <a
+              href="https://github.com/Jeno2002/employee_management_system"
+              target="_blank"
+              >| GitHub</a
+            >
+          </h3>
+          <p class="project-type">Java Backend CRUD Application</p>
+          <p>
+            Developed an application for managing employee records using
+            <strong>Java and JDBC</strong>. Implemented complete
+            <strong>CRUD operations</strong> with a
+            <strong>MySQL database</strong> backend. Designed an efficient data
+            management layer to handle employee information.
+          </p>
+          <p class="project-tags">
+            <strong>Key Skills:</strong> Java, JDBC, MySQL, SQL, OOP, CRUD
+            Operations
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" style="background-color: #f0f0f0 !important">
+      <h2 class="section-title">Experience &amp; Training</h2>
+      <p class="section-subtitle">
+        Hands-on learning and professional exposure that shaped my skills
+      </p>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">
+              Java Full Stack Development – Certification
+            </div>
+            <div class="exp-company">JSpiders Training Center, Chennai</div>
+          </div>
+          <div class="exp-date">Dec 2025</div>
+        </div>
+        <ul>
+          <li>
+            Completed professional training in Core Java and Object-Oriented
+            Programming.
+          </li>
+          <li>
+            Learned Collections Framework, Exception Handling, and
+            Multithreading.
+          </li>
+          <li>Hands-on experience with JDBC, Spring Boot, and RESTful APIs.</li>
+          <li>
+            Worked on full-stack projects integrating frontend, backend, and
+            MySQL database.
+          </li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">AI/ML Intern</div>
+            <div class="exp-company">Feather Softwares</div>
+          </div>
+          <div class="exp-date">Nov 2024</div>
+        </div>
+        <ul>
+          <li>
+            Attended sessions on Artificial Intelligence and Machine Learning.
+          </li>
+          <li>Gained understanding of data preprocessing and ML concepts.</li>
+          <li>
+            Observed practical demonstrations of model training and evaluation.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="background-color: #f0f0f0 !important">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-wrap">
+        <div class="contact-left">
+          <p>
+            Thanks for stopping by! I'm always open to new opportunities and
+            entry-level roles. Drop me a message below or reach out directly.
+          </p>
+          <div class="contact-detail">
+            📧 <strong>Email:</strong>&nbsp;<a
+              href="mailto:infantjenoj@gmail.com"
+              >infantjenoj@gmail.com</a
+            >
+          </div>
+          <div class="contact-detail">
+            📞 <strong>Phone:</strong>&nbsp;+91-9345684961
+          </div>
+          <div class="contact-detail">
+            🌐 <strong>GitHub:</strong>&nbsp;<a
+              href="https://github.com/Jeno2002"
+              target="_blank"
+              >github.com/Jeno2002</a
+            >
+          </div>
+          <div class="contact-detail">
+            💼 <strong>LinkedIn:</strong>&nbsp;<a
+              href="https://www.linkedin.com/in/infant-jeno"
+              target="_blank"
+              >linkedin.com/in/infant-jeno</a
+            >
+          </div>
+          <div class="contact-detail">
+            📍 <strong>Location:</strong>&nbsp;Kanyakumari, Tamil Nadu
+          </div>
+        </div>
+        <div class="contact-right">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="from_name" placeholder="Enter your name" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              id="from_email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea
+              id="message"
+              placeholder="Type your message here..."
+            ></textarea>
+          </div>
+          <button class="btn-send" onclick="sendEmail()">Send Message</button>
+        </div>
+      </div>
+    </section>
+
+    <footer style="background-color: #f0f0f0 !important">
+      <p>© 2025 Infant Jeno J · Designed &amp; Built with ❤️</p>
+    </footer>
+    <script>
+      function sendEmail() {
+        const name = document.getElementById("from_name").value.trim();
+        const email = document.getElementById("from_email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const btn = document.querySelector(".btn-send");
+
+        if (!name || !email || !message) {
+          alert("Please fill in all fields!");
+          return;
+        }
+
+        btn.textContent = "Sending...";
+        btn.disabled = true;
+        btn.style.backgroundColor = "#888";
+
+        const templateParams = {
+          name: name,
+          email: email,
+          message: message,
+        };
+
+        emailjs
+          .send("service_c0612el", "template_nijrayb", templateParams)
+          .then(
+            function () {
+              btn.textContent = "✅ Message Sent!";
+              btn.style.backgroundColor = "#22c55e";
+              document.getElementById("from_name").value = "";
+              document.getElementById("from_email").value = "";
+              document.getElementById("message").value = "";
+              setTimeout(() => {
+                btn.textContent = "Send Message";
+                btn.style.backgroundColor = "#4f6ef7";
+                btn.disabled = false;
+              }, 3000);
+            },
+            function (error) {
+              btn.textContent = "❌ Failed. Try Again";
+              btn.style.backgroundColor = "#ef4444";
+              btn.disabled = false;
+              setTimeout(() => {
+                btn.textContent = "Send Message";
+                btn.style.backgroundColor = "#4f6ef7";
+              }, 3000);
+              console.error("EmailJS error:", error);
+            },
+          );
+      }
+    </script>
+  </body>
+</html>
